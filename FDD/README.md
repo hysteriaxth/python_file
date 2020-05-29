@@ -1,2 +1,2 @@
-# P-PCA-KPCA
-#mixture for PCA and KPCA
+# FDD故障诊断算法
+
