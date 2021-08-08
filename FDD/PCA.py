@@ -39,7 +39,7 @@ class PCA_model():
         theta1 = np.sum(featValue[index[n_components:]])
         theta2 = np.sum(np.power(featValue[index[n_components:]], 2))
         theta3 = np.sum(np.power(featValue[index[n_components:]], 3))
-        h0 = 1 - 2 * theta1 * theta3 / (np.power(3 * theta2, 2))
+        h0 = 1 - 2 * theta1 * theta3 / 3 * (np.power(theta2, 2))
         ca_99 = norm.ppf(self.alpha, loc=0, scale=1) # alpha = 0.99 by default
         self.SPE_limit = theta1 * np.power(
             h0 * ca_99 * np.sqrt(2 * theta2) / theta1 + 1 + theta2 * h0 * (h0 - 1) / np.power(theta1, 2),
